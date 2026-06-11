@@ -1,0 +1,123 @@
+<style>
+    /* Floating WhatsApp & Call Box */
+    .floating-contact {
+        position: fixed;
+        right: 20px;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 999;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .floating-contact a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 55px;
+        height: 55px;
+        border-radius: 50%;
+        background-color: #25D366;
+        /* WhatsApp green */
+        color: white;
+        font-size: 28px;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        text-decoration: none;
+    }
+
+    .floating-contact a:last-child {
+        background-color: #007bff;
+        /* Call button blue */
+    }
+
+    .floating-contact a:hover {
+        transform: scale(1.1);
+        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+    }
+
+    /* Mobile responsiveness */
+    @media (max-width: 768px) {
+        .floating-contact a {
+            width: 45px;
+            height: 45px;
+            font-size: 22px;
+        }
+
+        .floating-contact {
+            right: 15px;
+            gap: 10px;
+        }
+    }
+</style>
+
+<!-- Floating WhatsApp & Call Box -->
+<div class="floating-contact">
+    <a href="https://wa.me/9701965803" target="_blank" aria-label="Chat on WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+    <a href="tel:+919701965803" aria-label="Call us">
+        <i class="fas fa-phone-alt"></i>
+    </a>
+</div>
+
+<footer id="footer" class="footer dark-background">
+
+    <div class="container footer-top">
+        <div class="row gy-4">
+            <div class="col-lg-5 col-md-12 footer-about">
+                <a href="/" class="logo d-flex align-items-center">
+                    <span class="sitename">UNI MITRA OVERSEAS</span>
+                </a>
+                <p>Your trusted partner for global education. We help students achieve their dream of studying abroad with expert guidance on admissions, visas, scholarships, and career pathways.</p>
+                <div class="social-links d-flex mt-4">
+                    <a href=""><i class="bi bi-twitter-x"></i></a>
+                    <a href=""><i class="bi bi-facebook"></i></a>
+                    <a href=""><i class="bi bi-instagram"></i></a>
+                    <a href=""><i class="bi bi-linkedin"></i></a>
+                </div>
+            </div>
+
+            <div class="col-lg-2 col-6 footer-links">
+                <h4>Useful Links</h4>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/about">About us</a></li>
+                    <li><a href="/services">Services</a></li>
+                    <li><a href="/contact">Contact</a></li>
+                    <li><a href="/visa">Visa Guide</a></li>
+                </ul>
+            </div>
+
+            <div class="col-lg-2 col-6 footer-links">
+                <h4>Our Services</h4>
+                <ul>
+                    <li><a href="/services">Admission Guidance</a></li>
+                    <li><a href="/visa">Visa Assistance</a></li>
+                    <li><a href="/scholarships">Scholarship Support</a></li>
+                    <li><a href="/coaching">IELTS/TOEFL Coaching</a></li>
+                    <li><a href="/services">Education Loan Support</a></li>
+                </ul>
+            </div>
+
+            <div class="col-lg-3 col-md-12 footer-contact text-center text-md-start">
+                <h4>Contact Us</h4>
+                <p>A108 Adam Street</p>
+                <p>New York, NY 535022</p>
+                <p>United States</p>
+                <p class="mt-4"><strong>Phone:</strong> <span>+91 97019 65803</span></p>
+                <p><strong>Email:</strong> <span>unimitraoverseas@gmail.com</span></p>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="container copyright text-center mt-4">
+        <p>© <span>Copyright</span> <strong class="px-1 sitename">UNI MITRA OVERSEAS</strong> <span>All Rights Reserved</span></p>
+        <div class="credits">
+            Designed by <a href="https://bvjr-portfolio.onrender.com" target="_blank">B Venkata Jitendra Reddy</a> | <a
+                href="https://nexorbix.onrender.com" target="_blank">Nexorbix</a>
+        </div>
+    </div>
+</footer>

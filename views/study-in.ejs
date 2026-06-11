@@ -1,0 +1,135 @@
+<main class="main">
+
+  <!-- Page Title -->
+  <div class="page-title dark-background" data-aos="fade" style="background-image: url(assets/img/page-title-bg.jpg);">
+    <div class="container position-relative">
+      <h1>Study in <%= countryName %></h1>
+      <p>Your complete guide to studying in <%= countryName %> – admission process, top universities, and more.</p>
+      <nav class="breadcrumbs">
+        <ol>
+          <li><a href="/">Home</a></li>
+          <li class="current">Study in <%= countryName %></li>
+        </ol>
+      </nav>
+    </div>
+  </div><!-- End Page Title -->
+
+  <!-- Country Overview Section -->
+  <section id="country-overview" class="starter-section section">
+    <div class="container section-title" data-aos="fade-up">
+      <span>Study in <%= countryName %></span>
+      <h2>Overview</h2>
+      <p>Why choose <%= countryName %> for your higher education?</p>
+    </div>
+
+    <div class="container" data-aos="fade-up">
+      <div class="row gy-5 align-items-center">
+        <div class="col-lg-6">
+          <div class="display-1 text-center mb-4">
+            <!-- Flag emoji or image -->
+            <img src="<%= flagUrl %>" alt="<%= countryName %> flag" style="width: 80px; height: auto;" onerror="this.style.display='none'">
+          </div>
+          <p class="lead"><%= overview %></p>
+          <div class="mt-4">
+            <div class="row g-3">
+              <div class="col-sm-6">
+                <div class="bg-light p-3 rounded">
+                  <i class="fas fa-graduation-cap text-primary me-2"></i>
+                  <strong>Top Universities:</strong>
+                  <ul class="mt-2 mb-0">
+                    <% topUniversities.forEach(uni => { %>
+                      <li><%= uni %></li>
+                    <% }) %>
+                  </ul>
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="bg-light p-3 rounded">
+                  <i class="fas fa-calendar-alt text-primary me-2"></i>
+                  <strong>Intakes:</strong>
+                  <ul class="mt-2 mb-0">
+                    <% intakes.forEach(intake => { %>
+                      <li><%= intake %></li>
+                    <% }) %>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <img src="<%= imageUrl %>" alt="Study in <%= countryName %>" class="img-fluid rounded shadow" onerror="this.src='https://placehold.co/600x400/0d42ff/white?text='+encodeURIComponent('<%= countryName %>')">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Admission Process Section -->
+  <section id="admission-process" class="section light-background">
+    <div class="container section-title" data-aos="fade-up">
+      <span>How to Apply</span>
+      <h2>Admission Process</h2>
+      <p>Step-by-step guide to getting admission in <%= countryName %></p>
+    </div>
+
+    <div class="container" data-aos="fade-up">
+      <div class="row gy-4">
+        <% admissionSteps.forEach((step, index) => { %>
+          <div class="col-md-6 col-lg-3">
+            <div class="text-center p-3">
+              <div class="bg-primary text-white rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style="width: 60px; height: 60px;">
+                <span class="h3 mb-0"><%= index + 1 %></span>
+              </div>
+              <h5><%= step.title %></h5>
+              <p class="small"><%= step.description %></p>
+            </div>
+          </div>
+        <% }) %>
+      </div>
+    </div>
+  </section>
+
+  <!-- Additional Details (Fees, Work Rights, PR) -->
+  <section id="additional-details" class="section">
+    <div class="container section-title" data-aos="fade-up">
+      <span>Key Information</span>
+      <h2>Fees, Work Rights & PR Pathways</h2>
+    </div>
+
+    <div class="container" data-aos="fade-up">
+      <div class="row gy-4">
+        <div class="col-md-4">
+          <div class="card h-100 border-0 shadow-sm text-center p-3">
+            <i class="fas fa-money-bill-wave fa-3x text-primary mb-3"></i>
+            <h5>Average Tuition Fees</h5>
+            <p><%= fees %></p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card h-100 border-0 shadow-sm text-center p-3">
+            <i class="fas fa-briefcase fa-3x text-primary mb-3"></i>
+            <h5>Work Rights</h5>
+            <p><%= workRights %></p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card h-100 border-0 shadow-sm text-center p-3">
+            <i class="fas fa-passport fa-3x text-primary mb-3"></i>
+            <h5>PR Pathway</h5>
+            <p><%= prPathway %></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Call to Action -->
+  <section class="section dark-background" data-aos="fade-up">
+    <div class="container text-center">
+      <h3 class="text-white">Ready to start your journey to <%= countryName %>?</h3>
+      <p class="text-white-50 mb-4">Get expert guidance on applications, visas, and scholarships.</p>
+      <a href="/contact" class="btn btn-primary btn-lg">Contact a Counsellor</a>
+    </div>
+  </section>
+
+</main>

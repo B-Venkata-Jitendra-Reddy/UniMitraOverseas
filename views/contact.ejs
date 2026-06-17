@@ -1,12 +1,178 @@
+<!-- Add this style block in the <head> or at the top of the page -->
+<style>
+    .contact-form {
+        background: var(--surface-color, #ffffff);
+        padding: 30px;
+        border-radius: 12px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+        border: 1px solid rgba(0, 0, 0, 0.04);
+    }
+
+    .contact-form .form-control,
+    .contact-form .form-select {
+        border-radius: 8px;
+        padding: 12px 16px;
+        border: 1px solid #e2e8f0;
+        transition: all 0.25s ease;
+        background-color: #fafbfc;
+        font-size: 0.95rem;
+    }
+
+    .contact-form .form-control:focus,
+    .contact-form .form-select:focus {
+        border-color: var(--accent-color, #0d42ff);
+        box-shadow: 0 0 0 4px rgba(13, 66, 255, 0.10);
+        background-color: #fff;
+    }
+
+    .contact-form .form-control.is-invalid,
+    .contact-form .form-select.is-invalid {
+        border-color: #dc3545;
+        box-shadow: 0 0 0 4px rgba(220, 53, 69, 0.10);
+    }
+
+    .contact-form .btn-submit {
+        background: var(--accent-color, #0d42ff);
+        color: #fff;
+        padding: 14px 40px;
+        border-radius: 50px;
+        font-weight: 600;
+        font-size: 1rem;
+        transition: all 0.3s ease;
+        border: none;
+        box-shadow: 0 4px 14px rgba(13, 66, 255, 0.25);
+    }
+
+    .contact-form .btn-submit:hover {
+        background: color-mix(in srgb, var(--accent-color, #0d42ff), black 10%);
+        transform: translateY(-2px);
+        box-shadow: 0 8px 24px rgba(13, 66, 255, 0.35);
+    }
+
+    .contact-form .btn-submit:active {
+        transform: translateY(0);
+    }
+
+    /* Success modal */
+    .modal-success-icon {
+        font-size: 4rem;
+        color: #28a745;
+        background: rgba(40, 167, 69, 0.08);
+        width: 100px;
+        height: 100px;
+        line-height: 100px;
+        border-radius: 50%;
+        margin: 0 auto 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .modal-success-icon i {
+        font-size: 3.5rem;
+        color: #28a745;
+    }
+
+    .modal-content {
+        border-radius: 20px;
+        border: none;
+        box-shadow: 0 25px 60px rgba(0, 0, 0, 0.15);
+    }
+
+    .modal-header {
+        border-bottom: none;
+        padding: 1rem 1rem 0.5rem 1rem;
+    }
+
+    .modal-body {
+        padding: 1.5rem 2rem 2rem 2rem;
+    }
+
+    .modal-footer {
+        border-top: none;
+        justify-content: center;
+        padding-bottom: 2rem;
+    }
+
+    .modal .btn-close {
+        background: transparent;
+        opacity: 0.5;
+        transition: 0.2s;
+    }
+
+    .modal .btn-close:hover {
+        opacity: 1;
+    }
+
+    /* Alert messages */
+    .form-alert {
+        margin-bottom: 1.5rem;
+        border-radius: 10px;
+        padding: 1rem 1.25rem;
+        font-weight: 500;
+    }
+
+    .form-alert-success {
+        background: #d4edda;
+        color: #155724;
+        border: 1px solid #c3e6cb;
+    }
+
+    .form-alert-error {
+        background: #f8d7da;
+        color: #721c24;
+        border: 1px solid #f5c6cb;
+    }
+
+    /* Info items alignment */
+    .info-item {
+        transition: 0.3s;
+        padding: 12px 0;
+    }
+
+    .info-item i {
+        font-size: 1.6rem;
+        min-width: 3rem;
+        text-align: center;
+        color: var(--accent-color, #0d42ff);
+    }
+
+    .info-item h3 {
+        font-size: 1.1rem;
+        font-weight: 600;
+        margin-bottom: 4px;
+    }
+
+    .info-item p {
+        margin-bottom: 0;
+        color: #4a5568;
+        font-size: 0.95rem;
+    }
+
+    @media (max-width: 768px) {
+        .contact-form {
+            padding: 20px;
+        }
+        .contact-form .btn-submit {
+            width: 100%;
+        }
+        .modal-body {
+            padding: 1.5rem;
+        }
+        .info-item {
+            padding: 8px 0;
+        }
+    }
+</style>
+
 <main class="main">
 
     <!-- Page Title -->
     <div class="page-title dark-background" data-aos="fade"
-        style="background-image: url(assets/img/page-title-bg.jpg);">
+        style="background-image: url(assets/img/contact-hero.png);">
         <div class="container position-relative">
-            <h1>Contact</h1>
-            <p>Have questions about studying abroad? Our expert counsellors are here to help you every step of the way.
-            </p>
+            <h1>Contact Us</h1>
+            <p>Have questions about studying abroad? Our expert counsellors are here to help you every step of the way.</p>
             <nav class="breadcrumbs">
                 <ol>
                     <li><a href="/">Home</a></li>
@@ -21,32 +187,42 @@
 
         <div class="container" data-aos="fade-up" data-aos-delay="100">
 
+            <!-- Google Maps -->
             <div class="mb-4" data-aos="fade-up" data-aos-delay="200">
                 <iframe
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2483.6802579551427!2d-0.1266154842303502!3d51.50732147963514!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47d8a00baf21de75%3A0x52963a5addd52a99!2sLondon%2C%20UK!5e0!3m2!1sen!2sin!4v1641641040866!5m2!1sen!2sin"
-                    style="border:0; width: 100%; height: 270px;" allowfullscreen="" loading="lazy">
+                    style="border:0; width: 100%; height: 270px; border-radius: 16px;" allowfullscreen="" loading="lazy">
                 </iframe>
             </div><!-- End Google Maps -->
 
             <div class="row gy-4">
 
+                <!-- Contact Info Column -->
                 <div class="col-lg-4">
                     <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="300">
                         <i class="bi bi-geo-alt flex-shrink-0"></i>
                         <div>
-                            <h3>Our Office</h3>
-                            <p>10 Downing Street, London SW1A 2AA</p>
+                            <h3>India Office</h3>
+                            <p>AVM Building, First Floor, Whitefield, Bangalore, Karnataka – 560066</p>
                         </div>
-                    </div><!-- End Info Item -->
+                    </div>
+
+                    <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="350">
+                        <i class="bi bi-geo-alt flex-shrink-0"></i>
+                        <div>
+                            <h3>UK Office</h3>
+                            <p>London, United Kingdom</p>
+                        </div>
+                    </div>
 
                     <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="400">
                         <i class="bi bi-telephone flex-shrink-0"></i>
                         <div>
                             <h3>Call Us</h3>
-                            <p>+91 6385128211</p>
-                            <p>+44 7495666287</p>
+                            <p><strong>India / WhatsApp:</strong> +91 63851 28211</p>
+                            <p><strong>UK / WhatsApp:</strong> +44 74956 66287</p>
                         </div>
-                    </div><!-- End Info Item -->
+                    </div>
 
                     <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="500">
                         <i class="bi bi-envelope flex-shrink-0"></i>
@@ -54,76 +230,81 @@
                             <h3>Email Us</h3>
                             <p>unimitraoverseas@gmail.com</p>
                         </div>
-                    </div><!-- End Info Item -->
-
+                    </div>
                 </div>
 
+                <!-- Contact Form Column -->
                 <div class="col-lg-8">
-                    <form action="/contact" method="post" data-aos="fade-up"
-                        data-aos-delay="200">
-                        <div class="row gy-4">
+                    <div class="contact-form">
 
-                            <!-- Personal Information -->
-                            <div class="col-md-6">
-                                <input type="text" name="name" class="form-control" placeholder="Student Name *"
-                                    required>
+                        <!-- Display flash messages (error/success) -->
+                        <% if (typeof message !== 'undefined' && message) { %>
+                            <div class="form-alert <%= message.type === 'success' ? 'form-alert-success' : 'form-alert-error' %>">
+                                <%= message.text %>
                             </div>
+                        <% } %>
 
-                            <div class="col-md-6">
-                                <input type="email" name="email" class="form-control" placeholder="Email Address *"
-                                    required>
+                        <form action="/contact" method="post" id="contactForm" novalidate>
+                            <div class="row gy-3">
+
+                                <!-- Personal Information -->
+                                <div class="col-md-6">
+                                    <input type="text" name="name" class="form-control" placeholder="Student Name *" required>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <input type="email" name="email" class="form-control" placeholder="Email Address *" required>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <input type="tel" name="mobile" class="form-control" placeholder="Mobile Number *"
+                                        maxlength="10" pattern="[0-9]{10}" inputmode="numeric"
+                                        title="Please enter exactly 10 digits" required>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <select name="preferredCountry" class="form-select" required>
+                                        <option value="">Preferred Country *</option>
+                                        <option>United Kingdom</option>
+                                        <option>United States</option>
+                                        <option>Australia</option>
+                                        <option>Canada</option>
+                                        <option>Germany</option>
+                                    </select>
+                                </div>
+
+                                <div class="col-12">
+                                    <input type="text" name="course" class="form-control" placeholder="Course Interested In *" maxlength="100" required>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <select name="loanSavings" class="form-select">
+                                        <option value="">Loan or Savings (optional)</option>
+                                        <option>Education Loan</option>
+                                        <option>Personal Savings</option>
+                                        <option>Scholarship</option>
+                                        <option>Sponsorship</option>
+                                        <option>Not Sure</option>
+                                    </select>
+                                </div>
+
+                                <!-- Message -->
+                                <div class="col-12">
+                                    <textarea class="form-control" name="message" rows="4" placeholder="Your Message *" maxlength="500" required></textarea>
+                                </div>
+
+                                <!-- Submit -->
+                                <div class="col-12 text-center">
+                                    <button type="submit" class="btn-submit" id="submitBtn">
+                                        <span id="btnText">Send Enquiry</span>
+                                        <span id="btnSpinner" class="spinner-border spinner-border-sm d-none" role="status"></span>
+                                    </button>
+                                </div>
+
                             </div>
-
-                            <div class="col-md-6">
-                                <input type="tel" name="mobile" class="form-control" placeholder="Mobile Number *"
-                                    maxlength="10" pattern="[0-9]{10}" inputmode="numeric"
-                                    title="Please enter exactly 10 digits" required>
-                            </div>
-
-                            <!-- Academic Background -->
-                            <div class="col-md-6">
-                                <select name="preferredCountry" class="form-select" required>
-                                    <option value="">Preferred Country *</option>
-                                    <option>United Kingdom</option>
-                                    <option>United States</option>
-                                    <option>Australia</option>
-                                    <option>Canada</option>
-                                    <option>Germany</option>
-                                </select>
-                            </div>
-
-                            <div class="col-12">
-                                <input type="text" name="course" class="form-control" placeholder="Course Interested In *" maxlength="100" required>
-                            </div>
-
-                            <div class="col-md-6">
-                                <select name="loanSavings" class="form-select">
-                                    <option value="">Loan or Savings (optional)</option>
-                                    <option>Education Loan</option>
-                                    <option>Personal Savings</option>
-                                    <option>Scholarship</option>
-                                    <option>Sponsorship</option>
-                                    <option>Not Sure</option>
-                                </select>
-                            </div>
-
-                            <!-- Message -->
-                            <div class="col-12">
-                                <textarea class="form-control" name="message" rows="4" placeholder="Your Message *" maxlength="500" required></textarea>
-                            </div>
-
-                            <!-- Submit Button -->
-                            <div class="col-12 text-center">
-                                <!-- <div class="loading" style="display: none;">Submitting...</div> -->
-                                <!-- <div class="error-message" style="display: none; color: red;"></div> -->
-                                <!-- <div class="sent-message" style="display: none; color: green;">Thank you! Our counsellor
-                                    will contact you within 24 hours.</div> -->
-                                <button type="submit">Send Enquiry</button>
-                            </div>
-
-                        </div>
-                    </form>
-                </div><!-- End Contact Form -->
+                        </form>
+                    </div>
+                </div>
 
             </div>
 
@@ -132,3 +313,63 @@
     </section><!-- /Contact Section -->
 
 </main>
+
+<!-- Success Modal -->
+<div class="modal fade" id="successModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header border-0 pb-0">
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body text-center">
+                <div class="modal-success-icon">
+                    <i class="bi bi-check-circle-fill"></i>
+                </div>
+                <h4 class="modal-title mb-3">Submitted Successfully!</h4>
+                <p class="mb-2">Thank you for contacting <strong>Uni Mitra Overseas</strong>.</p>
+                <p class="mb-2">We have sent a confirmation email to your inbox. <br> Please check your email to confirm.</p>
+                <p class="text-muted small">Our counsellors will reach out to you within <strong>24 hours</strong>.</p>
+            </div>
+            <div class="modal-footer border-0 justify-content-center pt-0">
+                <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Got it!</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    // Auto-show success modal if ?success=true is in URL
+    document.addEventListener('DOMContentLoaded', function() {
+        const urlParams = new URLSearchParams(window.location.search);
+        if (urlParams.get('success') === 'true') {
+            const modal = new bootstrap.Modal(document.getElementById('successModal'));
+            modal.show();
+
+            // Clean URL without reload
+            const cleanUrl = window.location.pathname;
+            window.history.replaceState({}, document.title, cleanUrl);
+        }
+
+        // Optional: show loading spinner on submit
+        const form = document.getElementById('contactForm');
+        const submitBtn = document.getElementById('submitBtn');
+        const btnText = document.getElementById('btnText');
+        const btnSpinner = document.getElementById('btnSpinner');
+
+        if (form && submitBtn) {
+            form.addEventListener('submit', function(e) {
+                // Validate HTML5 first – if invalid, don't show spinner
+                if (!form.checkValidity()) {
+                    form.reportValidity();
+                    e.preventDefault();
+                    return;
+                }
+
+                submitBtn.disabled = true;
+                btnText.textContent = 'Sending...';
+                btnSpinner.classList.remove('d-none');
+                // The form will submit normally – this just gives feedback
+            });
+        }
+    });
+</script>

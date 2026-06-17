@@ -46,21 +46,9 @@ const contactSchema = new mongoose.Schema({
         type: String,
         enum: ['new', 'read', 'replied', 'archived'],
         default: 'new'
-    },
-    createdAt: {
-        type: Date,
-        default: Date.now
-    },
-    updatedAt: {
-        type: Date,
-        default: Date.now
     }
-});
-
-// Update the updatedAt timestamp on save
-contactSchema.pre('save', function(next) {
-    this.updatedAt = Date.now();
-    next();
+}, {
+    timestamps: true // automatically adds createdAt and updatedAt
 });
 
 // Index for faster queries

@@ -50,7 +50,7 @@ exports.submitContactForm = async (req, res) => {
     });
 
     req.session.message = { type: 'success', text: 'Thank you! Our counsellor will contact you within 24 hours.' };
-    res.redirect('/contact');
+    res.redirect('/contact?success=true');
   } catch (error) {
     console.error('Contact submission error:', error);
     req.session.message = { type: 'error', text: 'Something went wrong. Please try again later.' };

@@ -1,7 +1,3 @@
-const University = require('../models/University');
-const Scholarship = require('../models/Scholarship');
-const Blog = require('../models/Blog');
-
 exports.home = async (req, res) => {
     try {
         // const featuredUniversities = await University.find({ featured: true }).limit(6);
@@ -33,16 +29,6 @@ exports.about = (req, res) => {
     });
 };
 
-// exports.destinations = (req, res) => {
-//     const destinations = [
-//         { name: 'United Kingdom', flag: 'uk', overview: 'World-class education, rich history, and vibrant culture', topUniversities: ['Oxford', 'Cambridge', 'Imperial College'], popularCourses: ['Business', 'Engineering', 'Medicine'], tuitionFees: '£10,000 - £38,000/year', workOpportunities: 'Post-study work visa up to 2 years', prOpportunities: 'Skilled Worker visa leading to PR', intakes: 'September, January' },
-//         { name: 'Ireland', flag: 'ireland', overview: 'Tech hub of Europe, friendly environment', topUniversities: ['Trinity College Dublin', 'UCD', 'NUIG'], popularCourses: ['Computer Science', 'Pharma', 'Data Science'], tuitionFees: '€9,000 - €25,000/year', workOpportunities: 'Stay-back up to 2 years', prOpportunities: 'Critical Skills visa leading to PR', intakes: 'September, January' },
-//         { name: 'Canada', flag: 'canada', overview: 'High quality of life, immigration friendly', topUniversities: ['Toronto', 'UBC', 'McGill'], popularCourses: ['IT', 'Healthcare', 'Business Analytics'], tuitionFees: 'CAD 15,000 - CAD 35,000/year', workOpportunities: 'PGWP up to 3 years', prOpportunities: 'Express Entry & PNP pathways', intakes: 'September, January, May' },
-//         { name: 'Australia', flag: 'australia', overview: 'Excellent education system, sunny weather', topUniversities: ['ANU', 'Melbourne', 'Sydney'], popularCourses: ['Nursing', 'Engineering', 'Accounting'], tuitionFees: 'AUD 20,000 - AUD 45,000/year', workOpportunities: 'Post-study work up to 4 years', prOpportunities: 'Skilled Occupation list PR', intakes: 'February, July' }
-//     ];
-//     res.render('destinations', { title: 'Study Destinations | UNI MITRA OVERSEAS', destinations });
-// };
-
 exports.services = (req, res) => {
     const services = [
         { title: 'Admission Guidance', icon: 'graduation-cap', description: 'Expert guidance for university selection and admission process' },
@@ -61,27 +47,17 @@ exports.contact = (req, res) => {
     res.render('contact', { title: 'Contact Us | UNI MITRA OVERSEAS' });
 };
 
-// exports.applicationForm = (req, res) => {
-//     res.render('application', { title: 'Online Application | UNI MITRA OVERSEAS' });
-// };
-
-
-
-// Inside homeController.js (add this method)
 exports.visaPage = (req, res) => {
     res.render('visa', {
         title: 'Visa Information Guide | UNI MITRA OVERSEAS'
     });
 };
 
-// Add this method to homeController.js
 exports.coachingPage = (req, res) => {
     res.render('coaching', {
         title: 'IELTS & Exam Coaching | UNI MITRA OVERSEAS'
     });
 };
-
-// Inside homeController.js – add this method
 
 exports.studyInPage = (req, res) => {
     const country = req.query.country || 'uk'; // default to UK
@@ -135,40 +111,6 @@ exports.studyInPage = (req, res) => {
                 { title: 'Meet English & Academic Requirements', description: 'IELTS/PTE, transcripts.' },
                 { title: 'Apply via University or Agent', description: 'Receive Offer Letter.' },
                 { title: 'Apply for Student Visa (subclass 500)', description: 'Provide genuine temporary entrant (GTE) statement.' }
-            ]
-        },
-        ireland: {
-            name: 'Ireland',
-            flagUrl: 'https://flagcdn.com/w320/ie.png',
-            imageUrl: 'https://placehold.co/600x400/0d42ff/white?text=Ireland',
-            overview: 'Ireland is known as the "Silicon Valley of Europe". It offers a vibrant culture, friendly people, and excellent post-study work opportunities.',
-            topUniversities: ['Trinity College Dublin', 'University College Dublin', 'University of Galway', 'University College Cork', 'Dublin City University'],
-            intakes: ['September', 'January'],
-            fees: '€9,000 – €25,000 per year',
-            workRights: '20 hours/week during term, full-time holidays',
-            prPathway: 'Third Level Graduate Scheme → Critical Skills Employment Permit → Stamp 4',
-            admissionSteps: [
-                { title: 'Select Program', description: 'Use CAO or direct application.' },
-                { title: 'Prepare Documents', description: 'Transcripts, English test (IELTS 6.0+).' },
-                { title: 'Receive Offer', description: 'Accept and pay deposit.' },
-                { title: 'Apply for Long Stay D Visa', description: 'Show proof of funds (€7,000 + fees).' }
-            ]
-        },
-        france: {
-            name: 'France',
-            flagUrl: 'https://flagcdn.com/w320/fr.png',
-            imageUrl: 'https://placehold.co/600x400/0d42ff/white?text=France',
-            overview: 'France offers world-class education, affordable tuition, and a rich cultural experience. Many programs are taught in English.',
-            topUniversities: ['Sorbonne University', 'École Polytechnique', 'HEC Paris', 'Sciences Po', 'University of Paris'],
-            intakes: ['September', 'January'],
-            fees: '€2,770 – €3,770 per year (public universities)',
-            workRights: '964 hours/year (approx 20 hours/week)',
-            prPathway: 'After 5 years of residency, can apply for PR (carte de résident)',
-            admissionSteps: [
-                { title: 'Find a Program', description: 'Use Campus France platform.' },
-                { title: 'Apply', description: 'Directly to university or via Études en France.' },
-                { title: 'Receive Acceptance', description: 'Obtain visa letter.' },
-                { title: 'Apply for Long-Stay Visa', description: 'VLS-TS for students.' }
             ]
         },
         canada: {
